@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const app = express();
 const cors = require("cors");
 
+
 const dotenv = require("dotenv");
 
 dotenv.config();
@@ -32,6 +33,8 @@ mongoose
 app.use("/users", userRouter);
 app.use("/quotes", quoteRouter);
 
+const steps = require("./steps");
+
 app.get("/", (req, res) => {
-  res.status(200).send("Welcome WannaAPIs");
+  res.status(200).send(steps);
 });
