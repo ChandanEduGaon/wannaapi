@@ -18,7 +18,7 @@ const steps = `    <div style="width: 100vw;font-size: 30px;">
                 <li>email</li>
                 <li>password</li>
             </ul>
-            <p>You Will got a token (Which is JWD Token) Save it*</p>
+            <p>You Will got a token (Which is JWT Token) Save it*</p>
             <li><code>https://quoteapi.cyclic.app/quotes</code></li>
             <p>You have to create some quotes by</p>
             Method:POST*
