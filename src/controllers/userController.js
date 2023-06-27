@@ -12,7 +12,11 @@ const signup = async (req, res) => {
     const existinguser = await userModel.findOne({ email: email });
 
     if (existinguser) {
-      return res.status(200).json({ messsage: "User already exists" });
+      return res.status(200).json({
+        messsage: "User already exists",
+        token: null,
+        user: null,
+      });
     }
     // Hash Password
 
@@ -35,7 +39,7 @@ const signup = async (req, res) => {
       SECRET_KEY
     );
 
-    res.status(201).json({ user: result, token: token });
+    res.status(201).json({ user: result, token: token, messsage: "Signin successfully" });
   } catch (err) {
     console.log(err);
     res.status(500).json({ messsage: "Something went wrong" });
@@ -50,13 +54,21 @@ const signin = async (req, res) => {
     const existinguser = await userModel.findOne({ email: email });
 
     if (!existinguser) {
-      return res.status(404).json({ messsage: "User not found" });
+      return res.status(404).json({
+        messsage: "User not found",
+        token: null,
+        user: null
+      });
     }
 
     const matchPassword = await bcrypt.compare(password, existinguser.password);
 
     if (!matchPassword) {
-      res.status(400).json({ messsage: "Password Wrong" });
+      res.status(400).json({
+        messsage: "Password Wrong",
+        token: null,
+        user: null
+      });
     }
 
     //Toek Generation
@@ -67,7 +79,7 @@ const signin = async (req, res) => {
       },
       SECRET_KEY
     );
-    res.status(200).json({ user: existinguser, token: token });
+    res.status(200).json({ user: existinguser, token: token, messsage: "Login successfully" });
   } catch (err) {
     console.log(err);
     res.status(500).json({ messsage: "Something went wrong" });
