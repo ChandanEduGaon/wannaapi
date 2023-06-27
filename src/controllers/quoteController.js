@@ -20,16 +20,16 @@ const createQuote = async (req, res) => {
 };
 const updateQuote = async (req, res) => {
   const id = req.params.id;
-  // const { title, description } = req.body;
+  const { title, description } = req.body;
 
-  // const Quote = new quoteModel({
-  //   title: title,
-  //   description: description,
-  //   userId: req.userId,
-  // });
+  const newQuote = {
+    title: title,
+    description: description,
+    userId: req.userId,
+  };
 
   try {
-    const newQuote = await quoteModel.find(id);
+    await quoteModel.findByIdAndUpdate(id, newQuote, { new: true });
     res.status(202).json(newQuote);
   } catch (e) {
     console.log(e);
