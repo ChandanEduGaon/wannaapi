@@ -18,7 +18,26 @@ const createQuote = async (req, res) => {
     res.status(500).json({ message: "Error saving quote" });
   }
 };
-const updateQuote = (req, res) => {};
+const updateQuote = async (req, res) => {
+  const id = req.params.id;
+  const { title, description } = req.body;
+
+  const Quote = new quoteModel({
+    title: title,
+    description: description,
+    userId: req.userId,
+  });
+
+  try {
+    const newQuote = await quoteModel.findByIdAndUpdate(id, Quote, {
+      new: true,
+    });
+    res.status(202).json(newQuote);
+  } catch (e) {
+    console.log(e);
+    res.status(500).json({ message: "Somthing went wrong" });
+  }
+};
 const deleteQuote = async (req, res) => {
   const id = req.params.id;
   try {
