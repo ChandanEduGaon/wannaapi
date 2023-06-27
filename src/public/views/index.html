@@ -24,7 +24,7 @@
 
         .col {
             width: 100%;
-            text-align:left;
+            text-align: left;
 
         }
 
@@ -44,11 +44,32 @@
         a {
             text-decoration: none;
         }
-        .steps{
-            width:100%;
-            height:100%;
-            overflow:auto;
-            background-color:gray;
+
+        .steps {
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: gray;
+        }
+
+        @media only screen and (max-width: 800px) {
+            #image {
+                display: none;
+            }
+
+            .link {
+                position: absolute;
+                top: 10px;
+                background-color: aquamarine;
+                padding: 3px 15px;
+                border-radius: 10px;
+            }
+        }
+
+        .link {
+            background-color: aquamarine;
+            padding: 3px 15px;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -58,42 +79,43 @@
         <div class="container text-center">
             <a href="/signup" class="link">Token</a>
             <div class="row">
-                <div class="col">
+                <div class="col" id="image">
                     <img src="https://img.freepik.com/free-vector/application-programming-interface-concept-illustration_114360-9135.jpg?w=1380&t=st=1687777760~exp=1687778360~hmac=73a6a761700a04c9a729b65799200bb50c33e77aba5f7e65e8ddc3ebeac1061d"
                         alt="api" class="rounded">
                 </div>
-                
-                <div class="col py-4">
+
+                <div class="col py-4" id="quide">
                     <p>
                         Uses of this api <br>
-                        Note : On every request after signup, it is mandatory to pass token in HEADER as  <br>Authorization use prefix Bearer* <br>
-                        
+                        Note : On every request after signup, it is mandatory to pass token in HEADER as
+                        <br>Authorization use prefix Bearer* <br>
+
                         Key : Value <br>
                         Authorization : "Bearer" + Token <br>
-                        
+
                         EndPoints <br>
                         1. https://quoteapi.cyclic.app/ <br>
                         You will got Guide <br>
-                        
+
                         2. https://quoteapi.cyclic.app/users/signup <br>
                         You have to signup by <br>
-                        
+
                         Method:POST* <br>
                         username <br>
                         email <br>
                         password <br>
                         You Will got a token (Which is JWT Token) Save it* <br>
-                        
+
                         3. https://quoteapi.cyclic.app/quotes <br>
                         You have to create some quotes by <br>
-                        
+
                         Method:POST* <br>
                         title <br>
                         description <br>
                         You will get created quote <br>
-                        
+
                         4. https://quoteapi.cyclic.app/quotes <br>
-                        
+
                         Method:GET* <br>
                         You will get those quotes which are created by you!
                     </p>

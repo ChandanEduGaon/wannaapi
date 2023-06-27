@@ -46,6 +46,11 @@
         a {
             text-decoration: none;
         }
+        @media only screen and (max-width: 800px) {
+            #image{
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -55,7 +60,7 @@
             <a href="/" class="link">Home</a>
 
             <div class="row">
-                <div class="col">
+                <div class="col" id="image">
                     <img src="https://img.freepik.com/free-vector/application-programming-interface-concept-illustration_114360-9135.jpg?w=1380&t=st=1687777760~exp=1687778360~hmac=73a6a761700a04c9a729b65799200bb50c33e77aba5f7e65e8ddc3ebeac1061d"
                         alt="api" class="rounded">
                 </div>
