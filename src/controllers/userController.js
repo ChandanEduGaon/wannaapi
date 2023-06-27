@@ -13,7 +13,7 @@ const signup = async (req, res) => {
 
     if (existinguser) {
       return res.status(200).json({
-        messsage: "User already exists",
+        message: "User already exists",
         token: null,
         user: null,
       });
@@ -39,10 +39,10 @@ const signup = async (req, res) => {
       SECRET_KEY
     );
 
-    res.status(201).json({ user: result, token: token, messsage: "Signin successfully" });
+    res.status(201).json({ user: result, token: token, message: "Signin successfully" });
   } catch (err) {
     console.log(err);
-    res.status(500).json({ messsage: "Something went wrong" });
+    res.status(500).json({ message: "Something went wrong" });
   }
 };
 const signin = async (req, res) => {
@@ -55,7 +55,7 @@ const signin = async (req, res) => {
 
     if (!existinguser) {
       return res.status(404).json({
-        messsage: "User not found",
+        message: "User not found",
         token: null,
         user: null
       });
@@ -65,7 +65,7 @@ const signin = async (req, res) => {
 
     if (!matchPassword) {
       res.status(400).json({
-        messsage: "Password Wrong",
+        message: "Password Wrong",
         token: null,
         user: null
       });
@@ -79,10 +79,10 @@ const signin = async (req, res) => {
       },
       SECRET_KEY
     );
-    res.status(200).json({ user: existinguser, token: token, messsage: "Login successfully" });
+    res.status(200).json({ user: existinguser, token: token, message: "Login successfully" });
   } catch (err) {
     console.log(err);
-    res.status(500).json({ messsage: "Something went wrong" });
+    res.status(500).json({ message: "Something went wrong" });
   }
 };
 
