@@ -14,6 +14,6 @@ quoteRouter.post("/", auth, createQuote);
 
 quoteRouter.delete("/:id", auth, deleteQuote);
 
-quoteRouter.patch("/:id", auth, updateQuote);
+quoteRouter.put("/:id", auth, updateQuote);
 
 module.exports = quoteRouter;
