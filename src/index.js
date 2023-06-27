@@ -33,8 +33,15 @@ mongoose
 app.use("/users", userRouter);
 app.use("/quotes", quoteRouter);
 
-const steps = require("./steps");
 
 app.get("/", (req, res) => {
-  res.status(200).send(steps);
+  res.status(200).sendFile(__dirname + "/public/views/index.html");
+});
+app.get("/signup", (req, res) => {
+  res.status(200).sendFile(__dirname + '/public/views/signup_form.html');
+
+});
+app.get("/signin", (req, res) => {
+  res.status(200).sendFile(__dirname + '/public/views/signin_form.html');
+
 });

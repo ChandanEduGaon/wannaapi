@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WannaApi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <style>
+        .main {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .col {
+            width: 100%;
+            text-align:left;
+
+        }
+
+        form {
+            width: 70%;
+
+        }
+
+        .col form input {
+            width: 100%;
+        }
+
+        label {
+            font-size: 14px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+        .steps{
+            width:100%;
+            height:100%;
+            overflow:auto;
+            background-color:gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="container text-center">
+            <a href="/signup" class="link">Token</a>
+            <div class="row">
+                <div class="col">
+                    <img src="https://img.freepik.com/free-vector/application-programming-interface-concept-illustration_114360-9135.jpg?w=1380&t=st=1687777760~exp=1687778360~hmac=73a6a761700a04c9a729b65799200bb50c33e77aba5f7e65e8ddc3ebeac1061d"
+                        alt="api" class="rounded">
+                </div>
+                
+                <div class="col py-4">
+                    <p>
+                        Uses of this api <br>
+                        Note : On every request after signup, it is mandatory to pass token in HEADER as  <br>Authorization use prefix Bearer* <br>
+                        
+                        Key : Value <br>
+                        Authorization : "Bearer" + Token <br>
+                        
+                        EndPoints <br>
+                        1. https://quoteapi.cyclic.app/ <br>
+                        You will got Guide <br>
+                        
+                        2. https://quoteapi.cyclic.app/users/signup <br>
+                        You have to signup by <br>
+                        
+                        Method:POST* <br>
+                        username <br>
+                        email <br>
+                        password <br>
+                        You Will got a token (Which is JWT Token) Save it* <br>
+                        
+                        3. https://quoteapi.cyclic.app/quotes <br>
+                        You have to create some quotes by <br>
+                        
+                        Method:POST* <br>
+                        title <br>
+                        description <br>
+                        You will get created quote <br>
+                        
+                        4. https://quoteapi.cyclic.app/quotes <br>
+                        
+                        Method:GET* <br>
+                        You will get those quotes which are created by you!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+</body>
+
+</html>
