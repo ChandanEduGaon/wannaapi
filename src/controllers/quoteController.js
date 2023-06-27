@@ -29,7 +29,7 @@ const updateQuote = async (req, res) => {
   });
 
   try {
-    const newQuote = await quoteModel.findByIdAndUpdate(id, Quote, {
+    const newQuote = await quoteModel.findOneAndUpdate(id, Quote, {
       new: true,
     });
     res.status(202).json(newQuote);
